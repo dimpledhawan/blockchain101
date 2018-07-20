@@ -28,4 +28,27 @@ public class Blockchain101 {
         System.out.println(blockchain_json);        
     }
     
+        
+    public static Boolean isValid() {
+        Block currentBlock, prevBlock;
+        
+        for(int i = 0; i < blockchain.size(); i++) {
+            currentBlock = blockchain.get(i);
+            prevBlock = blockchain.get(i-1);
+            
+            if(!currentBlock.hash.equals(currentBlock.calculateHash())) {
+                System.out.println("Current hashes not equal");
+                return false;
+            }
+            
+            if(!prevBlock.hash.equals(prevBlock.calculateHash())) {
+                System.out.println("Previous hashes not equal");
+                return false;
+            }
+            
+        }
+        
+        return true;
+    }
+    
 }
