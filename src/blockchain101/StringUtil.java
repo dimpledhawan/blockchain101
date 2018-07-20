@@ -11,7 +11,7 @@ import java.security.MessageDigest;
  *
  * @author dimpledhawan
  */
-public class stringUtil {
+public class StringUtil {
     public static String applySha256(String input) {
         try {
             MessageDigest digest = MessageDigest.getInstance("SHA-256");

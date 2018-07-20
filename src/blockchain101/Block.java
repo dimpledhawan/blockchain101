@@ -11,13 +11,13 @@ import java.util.Date;
  *
  * @author dimpledhawan
  */
-public class block {
+public class Block {
     public String hash;
     public String prevHash;
     private String data;
     private long timeStamp;
     
-    public block(String data, String prevHash) {
+    public Block(String data, String prevHash) {
         this.data = data;
         this.prevHash = prevHash;
         this.timeStamp = new Date().getTime();
@@ -25,7 +25,7 @@ public class block {
     }
     
     public String calculateHash() {
-        String calculatedHash = stringUtil.applySha256(
+        String calculatedHash = StringUtil.applySha256(
                 prevHash +
                 Long.toString(timeStamp) +
                 data
